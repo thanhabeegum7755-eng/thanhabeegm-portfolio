@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Thanha Beegum | Creative Portfolio</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg:#08090d;
+    --card:#11131a;
+    --card2:#171922;
+    --text:#f5f5f7;
+    --muted:#9b9da8;
+    --purple:#8b5cf6;
+    --purple2:#c084fc;
+    --line:rgba(255,255,255,.09);
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:rgba(139,92,246,.12);
+    filter:blur(120px);
+    border-radius:50%;
+    top:-150px;
+    left:-150px;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:rgba(192,132,252,.08);
+    filter:blur(130px);
+    border-radius:50%;
+    right:-150px;
+    bottom:-100px;
+    z-index:-1;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    background:rgba(8,9,13,.75);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--line);
+}
+
+.navbar{
+    max-width:1180px;
+    height:78px;
+    margin:auto;
+    padding:0 25px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:27px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:var(--purple2);
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:34px;
+}
+
+.nav-links a{
+    color:#c8c8d0;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+.menu-btn{
+    display:none;
+    background:none;
+    border:0;
+    color:white;
+    font-size:26px;
+    cursor:pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    max-width:1180px;
+    margin:auto;
+    padding:140px 25px 80px;
+
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    align-items:center;
+    gap:80px;
+}
+
+.hero-label{
+    color:var(--purple2);
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:bold;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:clamp(45px,6vw,78px);
+    line-height:1.02;
+    letter-spacing:-4px;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:transparent;
+    -webkit-text-stroke:1px var(--purple2);
+}
+
+.hero-description{
+    max-width:620px;
+    color:var(--muted);
+    line-height:1.9;
+    font-size:16px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:35px;
+}
+
+.btn{
+    padding:14px 25px;
+    border-radius:8px;
+    background:var(--purple);
+    border:1px solid var(--purple);
+    color:white;
+    font-weight:bold;
+    font-size:14px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(139,92,246,.25);
+}
+
+.btn-outline{
+    background:transparent;
+    border-color:var(--line);
+}
+
+.btn-outline:hover{
+    border-color:var(--purple);
+}
+
+
+/* HERO CARD */
+
+.hero-visual{
+    display:flex;
+    justify-content:center;
+}
+
+.profile-card{
+    position:relative;
+    width:330px;
+    height:430px;
+
+    border:1px solid var(--line);
+    border-radius:24px;
+
+    background:
+        linear-gradient(145deg,
+        rgba(139,92,246,.20),
+        rgba(255,255,255,.025));
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:0 30px 100px rgba(0,0,0,.4);
+    overflow:hidden;
+}
+
+.profile-card::before{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    border:1px solid rgba(192,132,252,.25);
+    border-radius:50%;
+}
+
+.profile-card::after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    border:1px solid rgba(192,132,252,.12);
+    border-radius:50%;
+}
+
+.profile-initial{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#0d0e14;
+    border:1px solid rgba(192,132,252,.5);
+
+    color:var(--purple2);
+    font-size:48px;
+    font-weight:800;
+
+    z-index:2;
+}
+
+.profile-card h3{
+    margin-top:30px;
+    font-size:25px;
+    z-index:2;
+}
+
+.profile-card p{
+    color:var(--muted);
+    margin-top:8px;
+    z-index:2;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+    scroll-margin-top:80px;
+}
+
+.section{
+    max-width:1180px;
+    margin:auto;
+    padding:110px 25px;
+}
+
+.section-heading{
+    margin-bottom:55px;
+}
+
+.section-number{
+    color:var(--purple2);
+    font-size:12px;
+    letter-spacing:3px;
+    font-weight:bold;
+}
+
+.section-heading h2{
+    font-size:45px;
+    letter-spacing:-2px;
+    margin-top:10px;
+}
+
+.section-heading p{
+    color:var(--muted);
+    margin-top:15px;
+    max-width:600px;
+    line-height:1.7;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.about-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:35px;
+}
+
+.about-card h3{
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+.about-card p{
+    color:var(--muted);
+    line-height:1.9;
+    margin-bottom:15px;
+}
+
+.info-list{
+    display:grid;
+    gap:20px;
+}
+
+.info-row{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    padding-bottom:17px;
+    border-bottom:1px solid var(--line);
+}
+
+.info-row:last-child{
+    border-bottom:0;
+}
+
+.info-row span:first-child{
+    color:#777985;
+}
+
+.info-row span:last-child{
+    text-align:right;
+    color:#eee;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.skill-card{
+    padding:30px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    transition:.35s;
+}
+
+.skill-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(139,92,246,.6);
+    background:var(--card2);
+}
+
+.skill-number{
+    color:#6e707c;
+    font-size:13px;
+    margin-bottom:35px;
+}
+
+.skill-card h3{
+    font-size:22px;
+    margin-bottom:12px;
+}
+
+.skill-card p{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+.skill-line{
+    margin-top:25px;
+    width:100%;
+    height:3px;
+    background:#252631;
+    overflow:hidden;
+}
+
+.skill-line span{
+    display:block;
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,var(--purple),var(--purple2));
+    transition:1.5s;
+}
+
+
+/* =========================
+   EDUCATION
+========================= */
+
+.timeline{
+    position:relative;
+    max-width:800px;
+    margin:auto;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:10px;
+    top:0;
+    bottom:0;
+    width:1px;
+    background:var(--line);
+}
+
+.timeline-item{
+    position:relative;
+    padding-left:50px;
+    margin-bottom:45px;
+}
+
+.timeline-dot{
+    position:absolute;
+    left:4px;
+    top:5px;
+    width:13px;
+    height:13px;
+    border-radius:50%;
+    background:var(--purple);
+    box-shadow:0 0 20px rgba(139,92,246,.7);
+}
+
+.timeline-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    padding:28px;
+    border-radius:16px;
+}
+
+.timeline-year{
+    color:var(--purple2);
+    font-size:13px;
+    font-weight:bold;
+}
+
+.timeline-card h3{
+    margin:9px 0;
+    font-size:22px;
+}
+
+.timeline-card p{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+
+/* =========================
+   CREATIVE AREA
+========================= */
+
+.creative{
+    background:#0c0d12;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+}
+
+.creative-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.creative-card{
+    min-height:260px;
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:35px;
+    background:
+        radial-gradient(
+        circle at top right,
+        rgba(139,92,246,.18),
+        transparent 45%),
+        var(--card);
+}
+
+.creative-card h3{
+    font-size:27px;
+    margin-bottom:15px;
+}
+
+.creative-card p{
+    color:var(--muted);
+    line-height:1.8;
+}
+
+
+/* DRAWING DISPLAY */
+
+.drawing-preview{
+    margin-top:30px;
+    height:100px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.drawing-line{
+    height:1px;
+    background:var(--purple2);
+    flex:1;
+    transform:rotate(-8deg);
+}
+
+.drawing-line:nth-child(2){
+    transform:rotate(8deg);
+}
+
+.drawing-line:nth-child(3){
+    transform:rotate(-5deg);
+}
+
+
+/* =========================
+   GOAL
+========================= */
+
+.goal-section{
+    text-align:center;
+    padding:130px 25px;
+    background:
+        radial-gradient(
+        circle at center,
+        rgba(139,92,246,.18),
+        transparent 55%);
+}
+
+.goal-section h2{
+    font-size:clamp(42px,6vw,70px);
+    letter-spacing:-3px;
+    margin:20px 0;
+}
+
+.goal-section p{
+    max-width:650px;
+    margin:auto;
+    color:var(--muted);
+    line-height:1.9;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:50px;
+}
+
+.contact-text h3{
+    font-size:30px;
+    margin-bottom:18px;
+}
+
+.contact-text p{
+    color:var(--muted);
+    line-height:1.8;
+}
+
+.contact-details{
+    margin-top:30px;
+    display:grid;
+    gap:18px;
+}
+
+.contact-detail{
+    padding:17px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    background:var(--card);
+}
+
+.contact-detail small{
+    display:block;
+    color:#777985;
+    margin-bottom:5px;
+}
+
+.contact-detail strong{
+    font-size:15px;
+}
+
+
+form{
+    display:grid;
+    gap:15px;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:17px;
+    border-radius:10px;
+    border:1px solid var(--line);
+    background:var(--card);
+    color:white;
+    outline:none;
+    font-family:inherit;
+}
+
+textarea{
+    resize:vertical;
+}
+
+input:focus,
+textarea:focus{
+    border-color:var(--purple);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    border-top:1px solid var(--line);
+    padding:40px 20px;
+    text-align:center;
+}
+
+footer h2{
+    font-size:25px;
+}
+
+footer h2 span{
+    color:var(--purple2);
+}
+
+footer p{
+    color:#686a75;
+    font-size:13px;
+    margin-top:10px;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:1s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:78px;
+        left:0;
+        width:100%;
+        padding:25px;
+        background:#0b0c10;
+        border-bottom:1px solid var(--line);
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero-description{
+        margin:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-visual{
+        order:-1;
+    }
+
+    .profile-card{
+        width:290px;
+        height:380px;
+    }
+
+    .about-grid,
+    .creative-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .skills-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+
+@media(max-width:550px){
+
+    .navbar{
+        padding:0 18px;
+    }
+
+    .hero{
+        padding-left:18px;
+        padding-right:18px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .section{
+        padding:80px 18px;
+    }
+
+    .skills-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-heading h2{
+        font-size:36px;
+    }
+
+    .info-row{
+        flex-direction:column;
+        gap:6px;
+    }
+
+    .info-row span:last-child{
+        text-align:left;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<nav class="navbar">
+
+<a href="#home" class="logo">
+Thanha<span>.</span>
+</a>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#creative">Creative</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<button class="menu-btn" onclick="toggleMenu()">
+☰
+</button>
+
+</nav>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-text reveal">
+
+<div class="hero-label">
+WELCOME TO MY PORTFOLIO
+</div>
+
+<h1>
+I'm <span>Thanha</span><br>
+A Creative Learner
+</h1>
+
+<p class="hero-description">
+
+I am a Journalism student and aspiring web designer
+with an interest in writing, drawing, technology and
+creative digital work. I enjoy learning new skills and
+turning ideas into something meaningful.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#about" class="btn">
+Explore My Profile
+</a>
+
+<a href="#contact" class="btn btn-outline">
+Let's Connect
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-visual reveal">
+
+<div class="profile-card">
+
+<div class="profile-initial">
+TB
+</div>
+
+<h3>Thanha Beegum</h3>
+
+<p>Web Designer • Writer • Artist</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section" id="about">
+
+<div class="section-heading reveal">
+
+<div class="section-number">
+01 — ABOUT
+</div>
+
+<h2>About Me</h2>
+
+<p>
+A little introduction about who I am, what I enjoy
+and the direction I want to take in the future.
+</p>
+
+</div>
+
+
+<div class="about-grid">
+
+<div class="about-card reveal">
+
+<h3>My Story</h3>
+
+<p>
+
+Hello, I'm Thanha Beegum. I have completed my
+Higher Secondary education in the Journalism stream.
+
+</p>
+
+<p>
+
+I am interested in web designing, writing, journalism,
+drawing and creative digital work. I enjoy learning
+new things and improving my skills step by step.
+
+</p>
+
+<p>
+
+My aim is to build experience, develop my abilities
+and create a career in a field where creativity and
+technology come together.
+
+</p>
+
+</div>
+
+
+<div class="about-card reveal">
+
+<div class="info-list">
+
+<div class="info-row">
+<span>Education</span>
+<span>Higher Secondary — Journalism</span>
+</div>
+
+<div class="info-row">
+<span>Location</span>
+<span>Kannur, Kerala</span>
+</div>
+
+<div class="info-row">
+<span>Languages</span>
+<span>Malayalam, Basic English</span>
+</div>
+
+<div class="info-row">
+<span>Field</span>
+<span>Creative & Digital</span>
+</div>
+
+<div class="info-row">
+<span>Current Focus</span>
+<span>Web Designing</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= SKILLS ================= -->
+
+<section class="section" id="skills">
+
+<div class="section-heading reveal">
+
+<div class="section-number">
+02 — SKILLS
+</div>
+
+<h2>What I Can Do</h2>
+
+<p>
+The skills I have developed through education,
+practice and personal interest.
+</p>
+
+</div>
+
+
+<div class="skills-grid">
+
+
+<div class="skill-card reveal">
+
+<div class="skill-number">01</div>
+
+<h3>Web Designing</h3>
+
+<p>
+Creating modern web pages using HTML, CSS
+and basic JavaScript.
+</p>
+
+<div class="skill-line">
+<span data-width="82%"></span>
+</div>
+
+</div>
+
+
+<div class="skill-card reveal">
+
+<div class="skill-number">02</div>
+
+<h3>Journalism</h3>
+
+<p>
+Interest in news, media, communication and
+journalistic content.
+</p>
+
+<div class="skill-line">
+<span data-width="78%"></span>
+</div>
+
+</div>
+
+
+<div class="skill-card reveal">
+
+<div class="skill-number">03</div>
+
+<h3>Writing</h3>
+
+<p>
+Creative writing, ideas, storytelling and
+basic content creation.
+</p>
+
+<div class="skill-line">
+<span data-width="80%"></span>
+</div>
+
+</div>
+
+
+<div class="skill-card reveal">
+
+<div class="skill-number">04</div>
+
+<h3>Drawing</h3>
+
+<p>
+Creative drawing and visual expression as
+a personal artistic skill.
+</p>
+
+<div class="skill-line">
+<span data-width="85%"></span>
+</div>
+
+</div>
+
+
+<div class="skill-card reveal">
+
+<div class="skill-number">05</div>
+
+<h3>Typing</h3>
+
+<p>
+Basic typing skills with an interest in
+improving speed and accuracy.
+</p>
+
+<div class="skill-line">
+<span data-width="75%"></span>
+</div>
+
+</div>
+
+
+<div class="skill-card reveal">
+
+<div class="skill-number">06</div>
+
+<h3>Computer Skills</h3>
+
+<p>
+Basic computer knowledge and digital
+learning skills.
+</p>
+
+<div class="skill-line">
+<span data-width="72%"></span>
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section class="section" id="education">
+
+<div class="section-heading reveal">
+
+<div class="section-number">
+03 — EDUCATION
+</div>
+
+<h2>My Journey</h2>
+
+<p>
+A simple timeline of my education and current
+learning journey.
+</p>
+
+</div>
+
+
+<div class="timeline">
+
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+<div class="timeline-year">
+2024
+</div>
+
+<h3>SSLC</h3>
+
+<p>
+Completed Secondary School education.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+<div class="timeline-year">
+2026
+</div>
+
+<h3>Higher Secondary — Journalism</h3>
+
+<p>
+Completed Higher Secondary education
+in the Journalism stream.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+<div class="timeline-year">
+CURRENT
+</div>
+
+<h3>Web Designing</h3>
+
+<p>
+Currently developing skills in web design,
+HTML, CSS and JavaScript.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ================= CREATIVE ================= -->
+
+<section class="creative" id="creative">
+
+<div class="section">
+
+<div class="section-heading reveal">
+
+<div class="section-number">
+04 — CREATIVE SIDE
+</div>
+
+<h2>More Than Coding</h2>
+
+<p>
+Creativity is not limited to websites. I also enjoy
+writing and expressing ideas through drawing.
+</p>
+
+</div>
+
+
+<div class="creative-grid">
+
+
+<div class="creative-card reveal">
+
+<h3>Drawing & Visual Creativity</h3>
+
+<p>
+
+Drawing is one of my creative skills. I enjoy using
+visual ideas to express thoughts and create something
+original.
+
+</p>
+
+<div class="drawing-preview">
+
+<div class="drawing-line"></div>
+<div class="drawing-line"></div>
+<div class="drawing-line"></div>
+
+</div>
+
+</div>
+
+
+<div class="creative-card reveal">
+
+<h3>Writing & Media</h3>
+
+<p>
+
+My Journalism background has developed my interest
+in writing, media and communication. I want to combine
+these skills with modern digital design.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= GOAL ================= -->
+
+<section class="goal-section">
+
+<div class="section-number">
+05 — MY VISION
+</div>
+
+<h2>
+Learn.<br>
+Create.<br>
+Grow.
+</h2>
+
+<p>
+
+My goal is to continuously learn new skills,
+gain practical experience and build a career
+where technology and creativity come together.
+
+</p>
+
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="section" id="contact">
+
+<div class="section-heading reveal">
+
+<div class="section-number">
+06 — CONTACT
+</div>
+
+<h2>Let's Connect</h2>
+
+<p>
+Have an opportunity, idea or project?
+Feel free to get in touch.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-text reveal">
+
+<h3>Start a Conversation</h3>
+
+<p>
+
+I'm interested in learning, creative opportunities,
+web design projects and gaining practical experience.
+
+</p>
+
+
+<div class="contact-details">
+
+<div class="contact-detail">
+
+<small>LOCATION</small>
+
+<strong>Kannur, Kerala</strong>
+
+</div>
+
+
+<div class="contact-detail">
+
+<small>INTEREST</small>
+
+<strong>Web Design • Media • Creative Work</strong>
+
+</div>
+
+
+<div class="contact-detail">
+
+<small>FOCUS</small>
+
+<strong>Learning & Building Experience</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<form class="reveal" onsubmit="sendMessage(event)">
+
+<input
+type="text"
+id="name"
+placeholder="Your Name"
+required
+>
+
+<input
+type="email"
+id="email"
+placeholder="Your Email"
+required
+>
+
+<textarea
+id="message"
+rows="7"
+placeholder="Write your message..."
+required
+></textarea>
+
+<button class="btn" type="submit">
+Send Message
+</button>
+
+</form>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<h2>
+Thanha<span>.</span>
+</h2>
+
+<p>
+Creative Portfolio — 2026
+</p>
+
+<p>
+Web Design • Journalism • Writing • Drawing
+</p>
+
+</footer>
+
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu(){
+
+    document
+    .getElementById("navLinks")
+    .classList
+    .toggle("active");
+
+}
+
+
+/* =========================
+   CLOSE MENU
+========================= */
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document
+        .getElementById("navLinks")
+        .classList
+        .remove("active");
+
+    });
+
+});
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+const observer =
+new IntersectionObserver(
+(entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+},
+{
+    threshold:.15
+});
+
+
+revealElements.forEach(element=>{
+    observer.observe(element);
+});
+
+
+/* =========================
+   SKILL BARS
+========================= */
+
+const skillBars =
+document.querySelectorAll(".skill-line span");
+
+const skillObserver =
+new IntersectionObserver(
+(entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            const width =
+            entry.target.getAttribute("data-width");
+
+            entry.target.style.width = width;
+
+        }
+
+    });
+
+},
+{
+    threshold:.5
+});
+
+
+skillBars.forEach(bar=>{
+    skillObserver.observe(bar);
+});
+
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+function sendMessage(event){
+
+    event.preventDefault();
+
+    const name =
+    document.getElementById("name").value;
+
+    alert(
+        "Thank you, " +
+        name +
+        ". Your message has been received."
+    );
+
+    event.target.reset();
+
+}
+
+</script>
+
+
+</body>
+</html>
